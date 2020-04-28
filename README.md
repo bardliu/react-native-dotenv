@@ -1,3 +1,10 @@
+# Thanks [zetachang/react-native-dotenv](https://github.com/zetachang/react-native-dotenv)
+
+# Add Feature
+
+Add BUNDLE_ENV, You can add a `BUNDLE_ENV=staging` in the react native bundle command, like `BUNDLE_ENV=staging react-native bundle --platform android --dev false`
+Then `.env.development` replace to `.env.staging`. `staging` can be anything.
+
 # react-native-dotenv
 
 Let you `import` environment variables from a **.env** file in React Native, **don't** need any native code integration.

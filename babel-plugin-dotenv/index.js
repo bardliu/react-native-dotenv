@@ -19,9 +19,11 @@ module.exports = function (data) {
 
                 if (path.node.source.value === options.replacedModuleName) {
                   var config = dotEnv.config({ path: sysPath.join(configDir, configFile), silent: true }) || {};
-                  var platformPath = (process.env.BABEL_ENV === 'development' || process.env.BABEL_ENV === undefined)
-                                          ? configFile + '.development'
-                                          : configFile + '.production';
+                  var platformPath = process.env.BUNDLE_ENV
+                    ? configFile + '.' + process.env.BUNDLE_ENV
+                    : (process.env.BABEL_ENV === 'development' || process.env.BABEL_ENV === undefined)
+                      ? configFile + '.development'
+                      : configFile + '.production';
                   var config = Object.assign(config, dotEnv.config({ path: sysPath.join(configDir, platformPath), silent: true }));
 
                   path.node.specifiers.forEach(function(specifier, idx){
