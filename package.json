@@ -13,6 +13,6 @@
   "author": "David Chang",
   "license": "MIT",
   "dependencies": {
-    "babel-plugin-dotenv": "file:babel-plugin-dotenv"
+    "babel-plugin-dotenv": "file:~/react-native-dotenv/babel-plugin-dotenv"
   }
 }
